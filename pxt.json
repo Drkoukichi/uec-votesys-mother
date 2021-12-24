@@ -4,8 +4,8 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "radio": "*"
     },
     "files": [
         "README.md",

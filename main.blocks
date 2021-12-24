@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="jN9%()!70TOOpZ}N{08I" x="20" y="20"/><block type="device_forever" id="tth+dIJX{TeLJWBL8Kg7" x="225" y="20"/></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="jN9%()!70TOOpZ}N{08I" x="0" y="0"/><block type="device_forever" id="tth+dIJX{TeLJWBL8Kg7" x="205" y="0"/><block type="bluetooth_start_accelerometer_service" id="MVt-31cZ,qt+]NzP?m*t" disabled="true" x="39" y="197"/></xml>
