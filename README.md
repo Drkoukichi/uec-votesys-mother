@@ -1,3 +1,7 @@
+mainブランチは基本的に書き込まないでください。
+
+devブランチをいじってください。
+
 
 > このページを開く [https://drkoukichi.github.io/uec-votesys/](https://drkoukichi.github.io/uec-votesys/)
 
