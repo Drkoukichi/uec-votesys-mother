@@ -37,7 +37,7 @@ function CheckWinVote (votelist: any[]) {
         }
     }
     for (let i = 0; i <= 4; i++) {
-        let 配列: any[] = []
+        let 配列: number[] = []
         if (winner[i] > temp) {
             temp = 配列[i]
             while (winner.length > 0) {
@@ -92,10 +92,10 @@ let TempVotename: any[] = []
 let o = 0
 let i = 0
 let b = 0
-let ForVote: any[] = []
+let ForVote: number[] = []
 let temp = 0
 let qsum = 0
-let winner: any[] = []
+let winner: number[] = []
 let votedate: number[] = []
 let votename: string[] = []
 let GetVoteList: string[] = []
@@ -108,11 +108,13 @@ GetVoteList = []
 votename = []
 votedate = []
 winner = [0]
-radio.setGroup(90)
 DoSetup()
+radio.setGroup(90)
 while (input.buttonIsPressed(Button.AB) == false) {
     ShowNowVoteDate(votedate)
 }
+mode = 1
+radio.sendNumber(100)
 CheckVote(votename, votedate)
 basic.clearScreen()
 if (votedate.length == 0) {
