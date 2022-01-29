@@ -2,8 +2,7 @@ mainブランチは基本的に書き込まないでください。
 
 devブランチをいじってください。
 
-
-> このページを開く [https://drkoukichi.github.io/uec-votesys/mother](https://drkoukichi.github.io/uec-votesys/mother)
+> このページを開く [https://drkoukichi.github.io/uec-votesys-mother/](https://drkoukichi.github.io/uec-votesys-mother/)
 
 ## 拡張機能として使用
 
