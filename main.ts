@@ -1,5 +1,4 @@
 function DoSetup () {
-    radio.setGroup(80)
     while (!(input.buttonIsPressed(Button.B))) {
         if (a == 6) {
             a = 2
@@ -7,8 +6,8 @@ function DoSetup () {
         }
         basic.showNumber(a)
     }
+    qsum = a
     radio.sendNumber(a)
-    mode = 1
     music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
 }
 input.onButtonPressed(Button.A, function () {
@@ -57,6 +56,7 @@ radio.onReceivedValue(function (name, value) {
         votename.push(name)
         votedate.push(value)
         GetVoteList.push(name)
+        radio.sendString(name)
     }
 })
 function CheckVote (name: any[], vote: any[]) {
@@ -85,15 +85,12 @@ if (temp == 0) {
         }
     }
 }
-function ShowNowVoteDate (list: any[]) {
-    basic.showNumber(votedate.length)
-}
 let TempVotename: any[] = []
 let o = 0
 let i = 0
 let b = 0
-let ForVote: number[] = []
 let temp = 0
+let ForVote: number[] = []
 let qsum = 0
 let winner: number[] = []
 let votedate: number[] = []
@@ -108,12 +105,13 @@ GetVoteList = []
 votename = []
 votedate = []
 winner = [0]
+radio.setGroup(80)
 DoSetup()
 radio.setGroup(90)
-while (input.buttonIsPressed(Button.AB) == false) {
-    ShowNowVoteDate(votedate)
-}
 mode = 1
+while (input.buttonIsPressed(Button.AB) == false) {
+    basic.showNumber(votedate.length)
+}
 radio.sendNumber(100)
 CheckVote(votename, votedate)
 basic.clearScreen()
@@ -121,4 +119,18 @@ if (votedate.length == 0) {
     basic.showString("ERR NoVoteDate")
 } else {
     CheckWinVote(votedate)
+}
+for (let カウンター = 0; カウンター <= qsum - 1; カウンター++) {
+    if (カウンター == 0) {
+        basic.showString("A")
+    } else if (カウンター == 1) {
+        basic.showString("B")
+    } else if (カウンター == 2) {
+        basic.showString("C")
+    } else if (カウンター == 3) {
+        basic.showString("D")
+    } else if (カウンター == 4) {
+        basic.showString("E")
+    }
+    basic.showNumber(ForVote[カウンター])
 }
