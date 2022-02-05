@@ -65,22 +65,15 @@ function CheckVote (name: any[], vote: any[]) {
     TempVotename = []
     if (vote.length != 0) {
         for (let i = 0; i <= vote.length - 1; i++) {
-            temp = 0
             if (TempVotename.length != 0) {
                 for (let o = 0; o <= TempVotename.length - 1; o++) {
                     if (name[i] == TempVotename[o]) {
-                        temp = 1
-                        break;
-if (temp == 0) {
-                            TempVotename.push(name[i])
-                        } else {
-                            votename.removeAt(i)
-                            votedate.removeAt(i)
-                        }
+                        votename.removeAt(i)
+                        votedate.removeAt(i)
+                    } else {
+                        TempVotename.push(name[i])
                     }
                 }
-            } else {
-                TempVotename.push(name[i])
             }
         }
     }
@@ -120,17 +113,17 @@ if (votedate.length == 0) {
 } else {
     CheckWinVote(votedate)
 }
-for (let カウンター = 0; カウンター <= qsum - 1; カウンター++) {
-    if (カウンター == 0) {
+for (let カウンター1 = 0; カウンター1 <= qsum - 1; カウンター1++) {
+    if (カウンター1 == 0) {
         basic.showString("A")
-    } else if (カウンター == 1) {
+    } else if (カウンター1 == 1) {
         basic.showString("B")
-    } else if (カウンター == 2) {
+    } else if (カウンター1 == 2) {
         basic.showString("C")
-    } else if (カウンター == 3) {
+    } else if (カウンター1 == 3) {
         basic.showString("D")
-    } else if (カウンター == 4) {
+    } else if (カウンター1 == 4) {
         basic.showString("E")
     }
-    basic.showNumber(ForVote[カウンター])
+    basic.showNumber(ForVote[カウンター1])
 }
